@@ -1,5 +1,5 @@
 /*
-Package log does the logging either to local syslog or to Stderr.
+Package log sets up logging for the process
 */
 package log
 
@@ -11,16 +11,16 @@ import (
 
 var sysLog *syslog.Writer
 
-// Logger returns an object to write logs to.
+// Logger returns an object to write logs to
 func Logger(tag string) *log.Logger {
-	l := log.New(os.Stdout, tag, syslog.LOG_INFO|syslog.LOG_DAEMON)
+	l := log.New(os.Stdout, tag, log.LstdFlags)
 	if sysLog != nil {
 		l.SetOutput(sysLog)
 	}
 	return l
 }
 
-// InitSyslog tries to get in touch with local syslog.
+// InitSyslog tries to get in touch with local syslog
 func InitSyslog(tag string) {
 	var err error
 	sysLog, err = syslog.New(syslog.LOG_INFO|syslog.LOG_DAEMON, tag)
@@ -53,7 +53,6 @@ func Fatal(s string) {
 		sysLog.Err(s)
 		os.Exit(1)
 	} else {
-		log.Print(s) //log.Fatal produces ugly syslog message
-		os.Exit(1)
+		log.Fatal(s)
 	}
 }

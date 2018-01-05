@@ -10,7 +10,7 @@ import (
 )
 
 // Ignore sets all signals to be ignored
-func Ignore(f func()) {
+func Ignore() {
 	signal.Ignore()
 }
 
@@ -61,6 +61,7 @@ func Quit(f func()) {
 func Term(f func()) {
 
 	sigterm := make(chan os.Signal, 1)
+
 	signal.Notify(sigterm, syscall.SIGTERM)
 
 	go func() {

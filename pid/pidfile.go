@@ -4,13 +4,13 @@ Package pid checks for double invocation and manages pidfile.
 package pid
 
 import (
-	"github.com/aavzz/daemon/log"
+	"github.com/aavzz/stub-server/server/common/log"
 	"github.com/tabalt/pidfile"
 )
 
 var p *pidfile.PidFile
 
-// Write checks if the process has already been started
+// WritePid checks if the process has already been started
 // and writes PID file
 func Write(pid string) {
 	p = pidfile.NewPidFile(pid)
@@ -24,7 +24,7 @@ func Write(pid string) {
 	}
 }
 
-// Remove removes pidfile
+// Remove removes the process' PID file
 func Remove() {
 	if p != nil {
 		p.Clear()
