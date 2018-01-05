@@ -4,9 +4,6 @@ Package signal manages signal handling.
 package signal
 
 import (
-	"github.com/aavzz/daemon/log"
-	"github.com/aavzz/daemon/pid"
-	"github.com/spf13/viper"
 	"os"
 	"os/signal"
 	"syscall"

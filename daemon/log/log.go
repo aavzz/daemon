@@ -1,5 +1,5 @@
 /*
-Package log does the logging either to local syslog or to Stderr. 
+Package log does the logging either to local syslog or to Stderr.
 */
 package log
 

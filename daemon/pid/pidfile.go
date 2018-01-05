@@ -4,7 +4,7 @@ Package pid checks for double invocation and manages pidfile.
 package pid
 
 import (
-	"github.com/aavzz/stub-server/server/stubd/log"
+	"github.com/aavzz/daemon/log"
 	"github.com/tabalt/pidfile"
 )
 
