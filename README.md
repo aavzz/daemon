@@ -14,7 +14,7 @@ import (
 log.InitSyslog("tag")
 
 //Daemonize process if needed
-common.Daemonize()
+daemon.Daemonize()
 
 //After daemonize() this part runs in child only
 
