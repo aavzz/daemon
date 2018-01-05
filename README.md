@@ -24,7 +24,7 @@ pid.Write("/path/to/pidfile")
 //Set all signals to be ignored
 signal.Ignore()
 
-/Setup SIGHUP to re-read configuration
+//Setup SIGHUP to re-read configuration
 signal.Hup(func() {
 	log.Info("SIGHUP received, re-reading configuration file")
 	if err := viper.ReadInConfig(); err != nil {
