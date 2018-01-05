@@ -41,6 +41,6 @@ signal.Term(func() {
 })
 
 //signal.Quit is set up to terminate the process gracefully
-//in approppriate place (where needed objects are present).
+//in approppriate place (where needed objects are available).
 
 ```
