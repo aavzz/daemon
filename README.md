@@ -3,18 +3,18 @@ Daemon initialization routines (process, log, pidfile, signal handling)
 
 ```go
 import (
-	"github.com/aavzz/daemon"
+	"github.com/aavzz/daemon/fork"
 	"github.com/aavzz/daemon/log"
 	"github.com/aavzz/daemon/pid"
 	"github.com/aavzz/daemon/signal"
 }
      
 //Initialize logging to syslog with a relevant tag
-//The process is stopped if local syslog is not running
+//The process exits if local syslog is not running
 log.InitSyslog("tag")
 
 //Daemonize process if needed
-daemon.Daemonize()
+fork.Daemonize()
 
 //After daemonize() this part runs in child only
 
@@ -41,6 +41,9 @@ signal.Term(func() {
 })
 
 //signal.Quit is set up to terminate the process gracefully
-//in approppriate place (where needed objects are available).
+//in approppriate place (where required objects are available).
+
+
+//further initialization and an event loop
 
 ```

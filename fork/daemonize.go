@@ -1,7 +1,7 @@
 /*
-Package daemon sets up process to run in the background.
+Package fork sets up process to run in the background.
 */
-package daemon
+package fork
 
 import (
 	"log"

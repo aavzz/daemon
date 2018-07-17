@@ -11,7 +11,8 @@ import (
 
 var sysLog *syslog.Writer
 
-// Logger returns an object to write logs to
+// Logger returns an object to write logs to  
+// XXX Is this really used?
 func Logger(tag string) *log.Logger {
 	l := log.New(os.Stdout, tag, log.LstdFlags)
 	if sysLog != nil {
